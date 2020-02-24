@@ -1,0 +1,11 @@
+<?
+ $connect=mysql_connect(  "localhost",  "아이디",  "비밀번호");
+mysql_select_db( "디비명",$connect);
+ extract($_REQUEST);
+ $query= "select * from images where id=$id" ;
+ $result=mysql_query($query,$connect );
+ $row=mysql_fetch_array($result);
+    Header(  "Content-type:  image/jpeg");
+    echo $row[image];
+  mysql_close();
+ ?>
